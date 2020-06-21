@@ -1,0 +1,17 @@
+.mat-list-item:hover {
+    background-color: rgba(128, 128, 128, 0.233);
+}
+
+::ng-deep .mat-dialog-container {
+    padding:0px!important;
+}
+
+.mat-list-item {
+    line-height: 36px;
+    font-size: 14px;
+}
+
+::ng-deep .mat-list-text {
+    line-height: 36px;
+    font-size: 14px;
+}

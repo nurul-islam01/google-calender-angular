@@ -1,0 +1,12 @@
+<mat-list role="list">
+    <mat-list-item role="listitem" routerLink="/day" routerLinkActive="router-link-active"  (click)="selectDropdown('Day')"><div class="mat-list-text" style="display: flex; flex-direction: row; justify-content: space-between;"><span>Day</span> <span>D</span></div></mat-list-item>
+    <mat-list-item role="listitem" (click)="selectDropdown('Week')"><div class="mat-list-text" style="display: flex; flex-direction: row; justify-content: space-between;"><span>Week</span> <span>W</span> </div></mat-list-item>
+    <mat-list-item role="listitem" routerLink="/month" routerLinkActive="router-link-active"  (click)="selectDropdown('Month')"><div class="mat-list-text" style="display: flex; flex-direction: row; justify-content: space-between;"><span>Month</span> <span>M</span></div></mat-list-item>
+    <mat-list-item role="listitem" (click)="selectDropdown('Year')"><div class="mat-list-text" style="display: flex; flex-direction: row; justify-content: space-between;"><span>Year</span> <span>Y</span></div></mat-list-item>
+    <mat-list-item role="listitem" routerLink="/schedule" (click)="selectDropdown('Schedul')"><div class="mat-list-text" style="display: flex; flex-direction: row; justify-content: space-between;"><span>Schedul</span> <span>A</span></div></mat-list-item>
+    <mat-list-item role="listitem" (click)="selectDropdown('4 days')"><div class="mat-list-text" style="display: flex; flex-direction: row; justify-content: space-between;"><span>4 days</span> <span>X</span></div></mat-list-item>
+    
+    <mat-divider style="margin-top: 4px; margin-bottom: 4px;"></mat-divider>
+    <mat-list-item role="listitem"><div class="mat-list-text" style="display: flex; flex-direction: row; justify-content: space-between;"><span><i style="margin-top: 5px;" class="material-icons">&#xE5CA;</i></span> <span>Show Declined events</span></div></mat-list-item>
+
+</mat-list>

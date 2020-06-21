@@ -1,0 +1,31 @@
+<div class="event-container">
+    <table mat-table [dataSource]="dataSource">
+  
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef style="display: none;"> Date </th>
+        <td mat-cell *matCellDef="let element" style="width: 15% !important;">
+            <div>
+                <span class="tarik">{{tarik(element.date)}}</span> 
+                <span class="dayMonth">{{mashDin(element.date)}}</span>
+            </div>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef style="display: none;"> Time </th>
+        <td mat-cell *matCellDef="let element" style="width: 10% !important;"><div>
+            <span><i class="material-icons" style="color: #278043; font-size: 14px; margin-right: 16px; position: relative; top: 3px;">&#xE3FA;</i></span> <span>{{element.time}}</span>
+        </div> </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="eventText" >
+        <th mat-header-cell *matHeaderCellDef style="display: none;"> Event Text </th>
+        <td mat-cell *matCellDef="let element" style="width: 80% !important;"> {{element.eventText}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" style="height: 48px !important;" (click)="eventDialog(row, $event)"></tr>
+    </table>
+  </div>
+  
+  

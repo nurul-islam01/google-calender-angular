@@ -1,0 +1,176 @@
+<div class="day-main">
+    <div class="day-header">
+        <div class="gmt"><span>{{gmt}}</span></div>
+
+        <div class="top-border"></div>
+
+        <div class="day-item" id="day0">
+            <span class="day-name" [class.day-active]="activeDate(daysWeek[0])">SUN</span>
+            <div class="day-date" [class.day]="activeDate(daysWeek[0])" routerLink="/day"><span>{{dayOfDate(daysWeek[0])}}</span></div>
+        </div>
+        <div class="top-border" style="width: 1px;"></div>
+
+        <div class="day-item" id="day1">
+            <span class="day-name" [class.day-active]="activeDate(daysWeek[1])">MON</span>
+            <div class="day-date" [class.day]="activeDate(daysWeek[1])" routerLink="/day"><span>{{dayOfDate(daysWeek[1])}}</span></div>
+        </div>
+        <div class="top-border" style="width: 1px;"></div>
+
+        <div class="day-item" id="day2">
+            <span class="day-name" [class.day-active]="activeDate(daysWeek[2])">TUE</span>
+            <div class="day-date" [class.day]="activeDate(daysWeek[2])" routerLink="/day"><span>{{dayOfDate(daysWeek[2])}}</span></div>
+        </div>
+        <div class="top-border" style="width: 1px;"></div>
+        
+        <div class="day-item" id="day3">
+            <span class="day-name" [class.day-active]="activeDate(daysWeek[3])">WED</span>
+            <div class="day-date " [class.day]="activeDate(daysWeek[3])" routerLink="/day"><span>{{dayOfDate(daysWeek[3])}}</span></div>
+        </div>
+        <div class="top-border" style="width: 1px;"></div>
+
+        <div class="day-item" id="day4">
+            <span class="day-name" [class.day-active]="activeDate(daysWeek[4])">THU</span>
+            <div class="day-date " [class.day]="activeDate(daysWeek[4])" routerLink="/day"><span>{{dayOfDate(daysWeek[4])}}</span></div>
+        </div>
+
+        <div class="top-border" style="width: 1px;"></div>
+
+        <div class="day-item" id="day5">
+            <span class="day-name" [class.day-active]="activeDate(daysWeek[5])">FRI</span>
+            <div class="day-date " [class.day]="activeDate(daysWeek[5])" routerLink="/day"><span>{{dayOfDate(daysWeek[5])}}</span></div>
+        </div>
+
+        <div class="top-border"></div>
+
+        <div class="day-item" id="day6">
+            <span class="day-name" [class.day-active]="activeDate(daysWeek[6])">SAT</span>
+            <div class="day-date" [class.day]="activeDate(daysWeek[6])" routerLink="/day"><span>{{dayOfDate(daysWeek[6])}}</span></div>
+        </div>
+
+
+
+
+
+
+        <div class="day-container" style="z-index: 2; position: absolute; top: 100px; border-top: 1px solid rgba(128, 128, 128, 0.253);">
+            <!-- <div class="left-border"></div>
+            <div class="left-border"></div> -->
+            
+            <div class="time-container" id="time-container">
+    
+                <div class="red-bar" id="red-marker">
+                    <span class="red-circle"></span><span class="red-item"></span>
+                </div>
+    
+                <div class="event-item" id="event-item" (cdkDragEnded)="drop($event)" cdkDragLockAxis="y" cdkDrag>
+                    <span class="in-noitem" style="margin-top: 4px;">(no item)</span>
+                    <span class="in-noitem">{{fromTime}} - {{toTime}} </span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">1 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">2 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">3 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">4 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">5 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">6 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">7 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">8 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">9 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">10 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">11 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">12 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">1 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">2 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">3 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">4 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">5 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">6 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">7 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">8 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">9 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">10 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">11 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">12 PM</small><span class="row-item"></span>
+                </div>
+                
+                
+    
+            </div>
+        </div>
+        
+
+
+    </div>
+
+    
+</div>

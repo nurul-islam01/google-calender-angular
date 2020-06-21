@@ -1,0 +1,43 @@
+<nav class="nav search-bar" style="display: flex;" *ngIf="searchShow">
+    <span class="left-arrow" (click)="setSearchShow()"><i class="material-icons">&#xE5C4;</i></span>
+    <span class="search-text">Search</span>
+    <form class="search-form" method="post">
+        <span class="search-icon"><i class="material-icons">&#xE8B6;</i></span>
+        <input type="text" class="textbox" placeholder="Search">
+        <span class="search-icon" style="order: 3;"><i class="material-icons">&#xE5C5;</i></span>
+
+    </form>
+</nav>
+<nav class="nav nav-bar" *ngIf="!searchShow">
+    <div class="nav-left">
+        <button type="button" id="sidebarCollapse" class="d-flex justify-content-center btn navbar-btn">
+                <i class="material-icons">&#xE3C7;</i>
+            </button>
+        <img class="google-calender-image" src="assets/images/calender_ico.png" alt="">
+        <span class="nav-text">Calender</span>
+        <button class="btn todaybtn border" matTooltip="Today">Today</button>
+        <button class=" d-flex justify-content-center" matTooltip="Previous month" (click)="prevMonth()" id="left-arrow" ><i class="material-icons">&#xE314;</i></button>
+        <button class=" d-flex justify-content-center" matTooltip="Next month" (click)="nextMonth()" id="right-arrow"><i class="material-icons">&#xE315;</i></button>
+        <span class="month-text">{{month}}</span>
+    </div>
+   
+
+    <div class="nav-end">
+
+        <button data-toggle="tooltip" (click)="setSearchShow()" data-placement="bottom" title="Search" class="btn d-flex justify-content-center buttonwithborder" id="searchbtn"><i class="material-icons">&#xE8B6;</i></button>
+        <button data-toggle="tooltip" data-placement="bottom" title="Support" class="btn d-flex justify-content-center buttonwithborder" id="supportbtn"><i class="material-icons">&#xE8FD;</i></button>
+        <button data-toggle="tooltip" data-placement="bottom" title="Settings menu" class="btn d-flex justify-content-center buttonwithborder" id="settingsbtn"><i class="material-icons">&#xE8B8;</i></button>
+
+        <button class="border" (click)=" dropDown($event)" mat-button style=" margin-left: 10px; padding-right: 3px;">
+           {{selected}} <i class="material-icons">&#xE5C5;</i>
+        </button>
+
+
+        <button class="d-flex justify-content-center buttonwithborder" data-toggle="tooltip" data-placement="bottom" title="Apps" id="appsbtn"><i class="material-icons">&#xE5C3;</i></button>
+        <button class="d-flex justify-content-center buttonwithborder" id="profilebtn"><img src="assets/images/nassa_logo.png" alt=""></button>
+
+    </div>
+
+
+
+</nav>

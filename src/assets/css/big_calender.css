@@ -1,0 +1,173 @@
+h1.title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+.calendar-2 {
+    margin: 0px 0px;
+}
+
+.popover.calendar-2-event-popover {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: rgb(120, 120, 120);
+    border-radius: 2px;
+    max-width: 300px;
+}
+
+.popover.calendar-2-event-popover h4 {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.popover.calendar-2-event-popover .location,
+.popover.calendar-2-event-popover .datetime {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.popover.calendar-2-event-popover .location>span,
+.popover.calendar-2-event-popover .datetime>span {
+    margin-right: 10px;
+}
+
+.popover.calendar-2-event-popover .space,
+.popover.calendar-2-event-popover .attending {
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(160, 160, 160);
+    font-weight: 700;
+}
+
+.popover.calendar-2-event-popover .space>.pull-right,
+.popover.calendar-2-event-popover .attending>.pull-right {
+    font-weight: 400;
+}
+
+.popover.calendar-2-event-popover .attending {
+    margin-top: 5px;
+    font-size: 18px;
+    padding: 0px 10px 5px;
+}
+
+.popover.calendar-2-event-popover .attending img {
+    border-radius: 50%;
+    width: 40px;
+}
+
+.popover.calendar-2-event-popover .attending span.attending-overflow {
+    display: inline-block;
+    width: 40px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 50%;
+    padding: 8px 0px 7px;
+    text-align: center;
+}
+
+.popover.calendar-2-event-popover .attending>.pull-right {
+    font-size: 28px;
+}
+
+.popover.calendar-2-event-popover a.btn {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+[data-toggle="calendar-2"]>.row>.calendar-2-day {
+    font-family: 'Roboto', sans-serif;
+    width: 13.68%;
+    border: 1px solid rgb(235, 235, 235);
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    min-height: 120px;
+}
+
+[data-toggle="calendar-2"]>.row>.calendar-2-day.calendar-2-no-current-month {
+    color: rgb(200, 200, 200);
+}
+
+[data-toggle="calendar-2"]>.row>.calendar-2-day:last-child {
+    border-right-width: 1px;
+}
+
+[data-toggle="calendar-2"]>.row:last-child>.calendar-2-day {
+    border-bottom-width: 1px;
+}
+
+.calendar-2-day {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-2-day>time {
+    /* position: absolute; */
+    color: #70757a;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    font-family: Roboto, Arial, sans-serif;
+    text-transform: uppercase;
+    align-self: center;
+    text-align: center;
+    display: inline;
+    padding: 5px 8px;
+    border-radius: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.calendar-2-day>span {
+    color: #70757a;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    font-family: Roboto, Arial, sans-serif;
+    text-transform: uppercase;
+    align-self: center;
+    text-align: center;
+    margin-top: 8px;
+    word-wrap: break-word;
+    display: block;
+}
+
+.calendar-2-day>time:hover {
+    background: rgba(114, 103, 103, 0.158);
+}
+
+.calendar-2-day>.events {
+    cursor: pointer;
+}
+
+.calendar-2-day>.events>.event h4 {
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    font-size: 8px;
+    padding-left: 12px;
+    color: white;
+    margin-bottom: 3px;
+    margin: 3px;
+    border-radius: 15px;
+    background: rgb(11, 94, 66);
+    max-width: 135px!important;
+    overflow: hidden;
+}
+
+.calendar-2-day>.events>.event>.desc,
+.calendar-2-day>.events>.event>.location,
+.calendar-2-day>.events>.event>.datetime,
+.calendar-2-day>.events>.event>.attending {
+    display: none;
+}
+
+.calendar-2-day>.events>.event>.progress {
+    height: 10px;
+    display: none;
+}

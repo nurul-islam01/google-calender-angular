@@ -1,0 +1,54 @@
+.row {
+    height: 18.5vh;
+    min-height: 18.5vh;
+}
+
+.active-date {
+    background-color: #1a73e8;
+    color: #fff;
+}
+.active-date:hover {
+    background-color: #1a73e8;
+    color: #fff;
+}
+
+.not-this-month {
+    color: rgba(128, 128, 128, 0.575) !important;
+}
+
+.no-title {
+    background-color: #1a73e8;
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 10px;
+    text-transform: lowercase;
+    padding: 0px 3px 0px 3px;
+    z-index: 200;
+}
+.event-title {
+    background-color: #278043;
+    color: white;
+    width: 95%;
+    border-radius: 5px;
+    font-size: 12px;
+    float: left;
+    text-transform: none;
+    padding: 0px 3px 0px 3px;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    margin: 2px;
+}
+
+.calendar-2-day {
+    z-index: 1;
+}
+
+.event-item {
+    font-family: 'Roboto', sans-serif;
+    width: 13.68%;
+    border: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    min-height: 120px;
+    pointer-events: none;
+}

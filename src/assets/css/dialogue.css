@@ -1,0 +1,40 @@
+/* .vertical-alignment-helper {
+    display: table;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.vertical-align-center {
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events: none;
+} 
+
+
+.modal-content {
+    width: inherit;
+    max-width: inherit;
+    height: inherit;
+    margin: 0 auto;
+    pointer-events: all;
+} 
+
+
+.inp {
+    background-color: #f1f1f1;
+    padding: 8px;
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+}
+
+.dialogue-input-border {
+    display: block;
+    position: absolute;
+    height: 2px;
+    background: #40acbe;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    transform-origin: 50%;
+}  */

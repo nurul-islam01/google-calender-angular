@@ -1,0 +1,142 @@
+<nav id="sidebar">
+    <!-- calender start-->
+
+    <div class="planner">
+
+        <div class="calendar" style="margin-top: 10px;">
+            <div class="calendar-header">
+                <span class="month-year-text">{{monthYear}}</span>
+                <span class="arrow" style="margin-right: 50px;">
+                    <i (click)="prevMonth()" class="material-icons left">&#xE314;</i>
+                    <i (click)="nextMonth()" class="material-icons right">&#xE315;</i>
+                </span>
+        
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th><span data-toggle="tooltip" data-placement="bottom" title="Sunday">S</span></th>
+                        <th><span data-toggle="tooltip" data-placement="bottom" title="Monday">M</span></th>
+                        <th><span data-toggle="tooltip" data-placement="bottom" title="Tuesday">T</span></th>
+                        <th><span data-toggle="tooltip" data-placement="bottom" title="Wednesday">W</span></th>
+                        <th><span data-toggle="tooltip" data-placement="bottom" title="Thursday">T</span></th>
+                        <th><span data-toggle="tooltip" data-placement="bottom" title="Friday">F</span></th>
+                        <th><span data-toggle="tooltip" data-placement="bottom" title="Saturday">S</span></th>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td><span [class.active-date]="activeDate(days[0])" [class.not-this-month]="thisMonth(days[0])">{{getDate(days[0])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[1])" [class.not-this-month]="thisMonth(days[1])">{{getDate(days[1])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[2])" [class.not-this-month]="thisMonth(days[2])">{{getDate(days[2])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[3])" [class.not-this-month]="thisMonth(days[3])">{{getDate(days[3])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[4])" [class.not-this-month]="thisMonth(days[4])">{{getDate(days[4])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[5])" [class.not-this-month]="thisMonth(days[5])">{{getDate(days[5])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[6])" [class.not-this-month]="thisMonth(days[6])">{{getDate(days[6])}}</span></td>
+                       
+                    </tr>
+                    
+                    <tr>
+                        <td><span [class.active-date]="activeDate(days[7])" [class.not-this-month]="thisMonth(days[7])">{{getDate(days[7])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[8])" [class.not-this-month]="thisMonth(days[8])">{{getDate(days[8])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[9])" [class.not-this-month]="thisMonth(days[9])">{{getDate(days[9])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[10])" [class.not-this-month]="thisMonth(days[10])">{{getDate(days[10])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[11])" [class.not-this-month]="thisMonth(days[11])">{{getDate(days[11])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[12])" [class.not-this-month]="thisMonth(days[12])">{{getDate(days[12])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[13])" [class.not-this-month]="thisMonth(days[13])">{{getDate(days[13])}}</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span [class.active-date]="activeDate(days[14])" [class.not-this-month]="thisMonth(days[14])">{{getDate(days[14])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[15])" [class.not-this-month]="thisMonth(days[15])">{{getDate(days[15])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[16])" [class.not-this-month]="thisMonth(days[16])">{{getDate(days[16])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[17])" [class.not-this-month]="thisMonth(days[17])">{{getDate(days[17])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[18])" [class.not-this-month]="thisMonth(days[18])">{{getDate(days[18])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[19])" [class.not-this-month]="thisMonth(days[19])">{{getDate(days[19])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[20])" [class.not-this-month]="thisMonth(days[20])">{{getDate(days[20])}}</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span [class.active-date]="activeDate(days[21])" [class.not-this-month]="thisMonth(days[21])">{{getDate(days[21])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[22])" [class.not-this-month]="thisMonth(days[22])">{{getDate(days[22])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[23])" [class.not-this-month]="thisMonth(days[23])">{{getDate(days[23])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[24])" [class.not-this-month]="thisMonth(days[24])">{{getDate(days[24])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[25])" [class.not-this-month]="thisMonth(days[25])">{{getDate(days[25])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[26])" [class.not-this-month]="thisMonth(days[26])">{{getDate(days[26])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[27])" [class.not-this-month]="thisMonth(days[27])">{{getDate(days[27])}}</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span [class.active-date]="activeDate(days[28])" [class.not-this-month]="thisMonth(days[28])">{{getDate(days[28])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[29])" [class.not-this-month]="thisMonth(days[29])">{{getDate(days[29])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[30])" [class.not-this-month]="thisMonth(days[30])">{{getDate(days[30])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[31])" [class.not-this-month]="thisMonth(days[31])">{{getDate(days[31])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[32])" [class.not-this-month]="thisMonth(days[32])">{{getDate(days[32])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[33])" [class.not-this-month]="thisMonth(days[33])">{{getDate(days[33])}}</span></td>
+                        <td><span [class.active-date]="activeDate(days[34])" [class.not-this-month]="thisMonth(days[34])">{{getDate(days[34])}}</span></td>
+                    </tr>
+                    
+                </tbody>
+
+            </table>
+        </div>
+
+
+        <!--calender end-->
+
+        <!--Search box-->
+        <form autocomplete="off">
+            <div class="autocomplete">
+                <input id="myInput" type="text" name="myCountry" placeholder="Search for people">
+                <div class="bottom-border"></div>
+            </div>
+        </form>
+        <!--End Search box-->
+
+        <!--
+            Expandable list
+        -->
+
+        <div class="panel-group" role="tablist" style="margin-top: 30px;">
+            <!-- <div class="panel"> -->
+                <mat-accordion>
+                    <mat-expansion-panel >
+                        <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            My Calender
+                        </mat-panel-title>
+                        
+                        </mat-expansion-panel-header>
+                        <mat-checkbox>Nurul Islam</mat-checkbox>
+                        <mat-checkbox>Birthday</mat-checkbox>
+                        <mat-checkbox>Reminder</mat-checkbox>
+                        <mat-checkbox>Task</mat-checkbox>
+                    </mat-expansion-panel>
+                </mat-accordion>
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Other Calender
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            <span [matMenuTriggerFor]="otherCalender"><i class="material-icons">&#xE145;</i></span>
+                        </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-checkbox>Holidays in Bangladesh</mat-checkbox>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            <!-- </div> -->
+                <mat-menu #otherCalender="matMenu" xPosition="after">
+                    <button mat-menu-item>Subscribe to calender</button>
+                    <button mat-menu-item>Create new calender</button>
+                    <button mat-menu-item>Browse calenders of interest</button>
+                    <button mat-menu-item>From URL</button>
+                    <button mat-menu-item>Import</button>
+                </mat-menu>
+        </div>
+
+    </div>        <!--
+            end expandable
+        -->
+</nav>

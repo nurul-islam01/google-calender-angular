@@ -1,0 +1,270 @@
+.cross-btn {
+    position: relative; 
+    right: -10px; 
+    top: -15px;
+    float: right;
+    cursor: pointer;
+    align-self: flex-end;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    z-index: 1111;
+}
+
+.cross-btn i {
+    position: relative;
+    top: 7px;
+    left: 7px;
+    font-size: 22px;
+    color: gray;
+}
+
+.cross-btn:hover {
+    background-color: rgba(128, 128, 128, 0.089);
+}
+
+.mat-dialog-content {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.rm-button {
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    line-height: 36px;
+    color: gray;
+}
+
+
+.active-rm {
+    color: #007bff; 
+    background-color: #007bff1f;
+}
+
+.rm-buttons {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.rm-event {
+    margin-top: 10px;
+}
+
+.add-time {
+    font-size: 11px;
+    line-height: 24px;
+    height: 26px;
+    letter-spacing: .3px;
+    border: 1px solid rgba(128, 128, 128, 0.384);
+    border-radius: 4px;
+    background-color: #fff;
+    float: right;
+}
+
+.date-text span {
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;
+    color: #3c4043;
+    border: none;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 2px 0px 4px 0px;
+    min-width: 0%;
+    outline: none;
+    padding: 3px 4px 3px 4px;
+    border-radius: 5px;
+    z-index: 0;
+
+}
+
+
+/* .date-text span:hover {
+    background-color: rgba(128, 128, 128, 0.123);
+} */
+
+
+.event-item {
+    color: gray;
+    display: flex;
+}
+span {
+    margin-left: 3px;
+    margin-right: 3px;
+    color: gray;
+}
+
+.date-text {
+    display: flex;
+    text-align: center;
+    margin-top: -8px;
+    justify-content: baseline;
+    border-radius: 5px;
+    text-align: center;
+    text-justify: auto;
+    flex-grow: 40;
+}
+
+.text-field {
+    padding: 0px 7px;
+    height: 24px;
+    flex-grow: 40;
+    margin-left: -6px;
+    line-height: 24px;
+    border-radius: 5px;
+}
+
+.left-icon {
+    width: 36px;
+    height: 36px;
+    flex-grow: 1;
+}
+
+.left-icon i {
+    position: relative;
+    top: 5px;
+    text-align: center;
+}
+
+.rm-input {
+    color: #666;
+    display:inline-block;
+    margin:0;
+}
+:focus {
+    outline: none;
+}
+
+
+.title-input {
+    border-bottom: 1px solid #929fba !important;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.title-input:focus {
+    background-color: #fff !important;
+}
+
+.title-input:hover {
+    background-color: #fff !important;
+}
+
+.text-field {
+    color: #3c4043;
+    border: none;
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    min-width: 0%;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+}
+
+.rm-input {
+    width: 100%;
+    border: 0;
+}
+
+.add-guests {
+    padding: 4px;
+    border-radius: 3px;
+}
+.add-guests:hover {
+    background-color: rgba(128, 128, 128, 0.123);
+}
+
+.rm-input ~ .border {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+}
+
+.rm-input:focus {
+    background-color: rgba(128, 128, 128, 0.123);
+}
+
+.rm-input:focus ~ .border {
+    width: 100%;
+    transition: 0.5s;
+    visibility:visible !important;
+}
+.geuest-divider {
+    margin-bottom: 6px;
+}
+
+
+.rm-input:active {
+    background-color: rgba(128, 128, 128, 0.068);
+}
+
+.border {
+    height: 1px;
+    border: 1px solid #4285F4!important;
+    visibility:hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+.conf-text {
+    position: relative;
+    top: 5px;
+    border-radius: 4px;
+    padding: 8px;
+    margin-left: -5px;
+}
+
+.conf-text-btn {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    float: right;
+
+}
+
+.conf-text-btn i {
+    position: relative;
+    top: 6px;
+    left: 6px;
+}
+
+.conf-text-btn:hover {
+    background-color: rgba(128, 128, 128, 0.151);
+}
+
+.conf-text:hover {
+    background-color: rgba(128, 128, 128, 0.123);
+}
+
+.des-text {
+    padding: 5px;
+    color: gray;
+    height: 36px;
+}
+
+.des-text:hover {
+    background-color: rgba(128, 128, 128, 0.116);
+}
+
+::ng-deep .mat-form-field-underline  {
+    display: none;
+}
+::ng-deep .mat-select-value-text span  {
+   color: gray;
+}
+::ng-deep .mat-menu-panel  {
+   max-height: 220px;
+}

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url(https://zavoloklom.github.io/material-design-iconic-font/css/docs.md-iconic-font.min.css);
+body {
+    font-family: 'Roboto,RobotoDraft', 'Arial,sans-serif', 'Poppins', sans-serif;
+    background: #fafafa;
+    overflow-y: auto;
+    position: fixed
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+*:focus {
+    outline: none;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

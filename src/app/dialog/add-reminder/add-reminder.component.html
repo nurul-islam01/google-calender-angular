@@ -1,0 +1,162 @@
+<div style="display: flex; flex-direction: column; padding: 24px; width: 100%;" cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle>
+  <span class="cross-btn" [mat-dialog-close]><i class="material-icons">&#xE14C;</i></span>
+  <div mat-dialog-content style="width: 100%; position: relative; top: -20px;">
+      <form [formGroup]="addFormGroup">
+          <input matInput class="rm-input add-guests title-input" formControlName="title" placeholder="Add title and time" >
+          <p class="border"></p>
+          <div class="rm-buttons">
+            <button mat-button class="rm-button" [class.active-rm]="showType === 1" (click)="typeforRm(1)">Event</button>
+            <button mat-button class="rm-button" [class.active-rm]="showType === 2" (click)="typeforRm(2)">Reminder</button>
+            <button mat-button class="rm-button" [class.active-rm]="showType === 3" (click)="typeforRm(3)">Task</button>
+
+          </div>
+
+          <div class="rm-event">
+            <div style="display: flex; justify-content: space-between; text-align: center; justify-items: center;">
+            <div class="event-item">
+              <span class="left-icon" style="position: relative; left: -6px;"><i class="material-icons">&#xE855;</i></span>
+              <div class="date-text">
+                <span class="from-date" style="width: 90px;"> 
+                  <input matInput class="rm-input add-guests" [(ngModel)]="fromDateModel"   (ngModelChange)="fromDateChange($event)" formControlName="fromdate" [matDatepicker]="fromdate" style="margin-top: 5px;" [placeholder]="clickedDate" [value]="clickedDate" (click)="fromdate.open()">
+                  <mat-datepicker [startAt]="data" #fromdate></mat-datepicker> 
+                  <p class="border"></p>
+                </span> 
+                <span *ngIf="addTime || !addFormGroup.get('allDay').value || !addFormGroup.get('taskAllDay').value"  style="width: 80px;" > 
+                  <input matInput class="rm-input add-guests" formControlName="fromtime" [matMenuTriggerFor]="fromtime" aria-label="default time" style="margin-top: 5px;" [placeholder]="fromTime " [value]="fromTime">
+                  <p class="border"></p>
+                  <mat-menu #fromtime="matMenu" xPosition="after">
+                    <button mat-menu-item *ngFor="let item of fromTimes" (click)="selectedFromTime(item)">{{item}}</button>
+                  </mat-menu>
+                </span>
+                <span *ngIf="showType === 1" ><i style="position: relative; top: 10px; font-size: 14px;" class="material-icons">&#xE15B;</i></span>
+                <span *ngIf="addTime && showType === 1" style="width: 80px;">
+                  <input matInput  class="rm-input add-guests" formControlName="totime" [matMenuTriggerFor]="totime"  aria-label="default time" style="margin-top: 5px;" [placeholder]="toTime" [value]="toTime">
+                  <p class="border"></p>
+                  <mat-menu #totime="matMenu" xPosition="after">
+                    <button mat-menu-item *ngFor="let item of toTimes" (click)="selectedToTime(item)">{{item}}</button>
+                  </mat-menu>
+                </span>
+                <span class="to-date" style="width: 90px;" *ngIf=" showType === 1">
+                  <input matInput [min]="data" formControlName="todate" class="rm-input add-guests" [(ngModel)]="toDateModel" (ngModelChange)="toDateChange($event)" [matDatepicker]="todate" style="margin-top: 5px;" [placeholder]="clickedDate" [value]="clickedDate" (click)="todate.open()">
+                  <mat-datepicker md-min-date="data" [startAt]="data"  #todate></mat-datepicker>
+                  <p class="border"></p>
+                </span> 
+                
+                <span class="to-date" *ngIf="showType === 3">
+                  <mat-checkbox  style="margin-left: 10px; position: relative; top: 7px;" formControlName="taskAllDay"  [checked]="true">All day</mat-checkbox>
+                </span> 
+
+
+              </div>
+            </div>
+              <button *ngIf="!addTime && showType === 1" class="add-time" (click)="onAddTime()">Add time</button>
+            </div>
+            <div *ngIf="showType === 1" style="display: flex; height: 40px;">
+              <span class="left-icon"><i class="material-icons">&#xE7EF;</i></span>
+              <span class="text-field">
+                <input matInput formControlName="addguests" type="email" class="rm-input add-guests" aria-label="Add guests" placeholder="Add guests ">
+                <p class="border"></p>
+              </span>
+            </div>
+
+            <mat-divider class="geuest-divider" *ngIf="diverShow && showType === 1"></mat-divider>
+
+            <div *ngIf="showType === 1" style="display: flex;">
+              <span class="left-icon"><i class="material-icons">&#xE0C8;</i></span>
+              <span class="text-field">
+                <input matInput formControlName="addlocation" class="rm-input add-guests" (click)="diverShow = true" aria-label="Add location" placeholder="Add location">
+                <p class="border"></p>
+              </span>
+            </div>
+            
+
+            <div *ngIf="diverShow && showType === 1" style="display: flex;">
+              <span class="left-icon"><i style="color: gray;" class="material-icons">&#xE04B;</i></span>
+              <span  class="text-field">
+                <span class="conf-text" *ngIf="!conferencing" (click)="conferencing = true">Add Conferencing</span>
+                <span class="conf-text" *ngIf="conferencing">Hangout</span>
+                <span class="conf-text-btn" *ngIf="conferencing" (click)="conferencing = false"><i class="material-icons">&#xE14C;</i></span>
+              </span>
+              
+            </div>
+
+            
+
+            <mat-divider class="geuest-divider" *ngIf="(diverShow && showType === 1) || (editor && showType === 1)"></mat-divider>
+
+            <div *ngIf="(showType === 1) || (showType === 3)" style="display: flex;">
+              <span class="left-icon"><i class="material-icons">&#xE164;</i></span>
+              <span  class="text-field des-text" *ngIf="!editor" (click)="editor = true">
+                Add Description
+              </span>
+              <span  *ngIf="editor" class="text-field" style="height: 110px;">
+                <kendo-editor formControlName="description" style="overflow: hidden; height: 100px; background-color: rgba(128, 128, 128, 0.185);"  [value]="value" (valueChange)="valueChange($event)"></kendo-editor>
+              </span>
+            </div>
+            <mat-divider class="geuest-divider" *ngIf="editor && showType === 1"></mat-divider>
+
+            <div *ngIf="showType === 2" style="display: flex; justify-content: flex-start;">
+              <span class="left-icon"><i class="material-icons">&#xE5D5;</i></span>
+              <span style="flex-grow: 40; margin-top: -7px;">
+                <mat-form-field>
+                  <mat-select value="1" formControlName="addtype">
+                    <mat-option value="1">
+                      Does not repeat
+                    </mat-option>
+                    
+                    <mat-option value="2">
+                      Daily
+                    </mat-option>
+                    
+                    <mat-option value="3">
+                      Weekly on Saturday
+                    </mat-option>
+                    
+                    <mat-option value="4">
+                      Monthly on the second Saturday
+                    </mat-option>
+                    
+                    <mat-option value="5">
+                      Annually on January 9
+                    </mat-option>
+                    
+                    <mat-option value="6">
+                      Every Weekday (Monday to Friday)
+                    </mat-option>
+                    
+                    <mat-option value="7">
+                      Custom...
+                    </mat-option>
+
+                    
+                  </mat-select>
+                </mat-form-field>
+                <mat-checkbox style="margin-left: 10px;" formControlName="allDay"  [checked]="true">All day</mat-checkbox>
+              </span>
+            </div>
+        
+            <div *ngIf="showType === 3" style="display: flex;">
+              <span class="left-icon"><i class="material-icons">&#xE5D5;</i></span>
+              <span style="flex-grow: 40; margin-top: -7px;">
+                <mat-form-field>
+                  <mat-select value="1" formControlName="addtask">
+                    <mat-option value="1">
+                      My Task
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </span>
+            </div>
+        
+
+          </div>
+
+    </form>
+
+  </div>
+  <div mat-dialog-actions style="display: flex; justify-content: flex-end;">
+      <button mat-button>More options</button>
+      <button mat-button (click)="saveReminder()" class="btn-primary">Save</button>
+  </div>
+  
+</div>

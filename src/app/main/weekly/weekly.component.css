@@ -1,0 +1,224 @@
+.day-main {
+    display: flex;
+    flex-direction: column;
+    /* height: 80vh; */
+    margin-left: -20px;
+    overflow: auto;
+}
+
+.day-header {
+    width: 169vh; 
+    display: flex;
+    margin-top: 10px;
+    background-color: white;
+    z-index: 100;
+}
+
+.top-border {
+    margin-left: 13px; 
+    height: 85vh !important; 
+    width: .5px;
+    margin-top: 65px;
+    background-color: rgba(128, 128, 128, 0.253);
+    align-self: flex-end;
+}
+
+.day {
+    height: 48px;
+    width: 48px;
+    font-size: 25px;
+    font-variant: tabular-nums;
+    -webkit-font-feature-settings: "tnum" 1;
+    font-feature-settings: "tnum" 1;
+    background-color: #1a73e8;
+    color: white !important;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin: 5px;
+}
+
+.gmt {
+    align-self: flex-start; 
+    font-size: 10px; 
+    color: gray; 
+    margin-left: 1px;
+    margin-top: 70px;
+}
+
+.day-name {
+    position: relative;
+    z-index: 2;
+    color: #70757a;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .8px;
+    margin-left: 0;
+    text-indent: .8px;
+    text-align: center;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+}
+
+.main-container {
+    position: relative;
+}
+
+.day-container {
+    display: flex;
+    width: 169vh;
+    height: 80.8vh;
+    overflow: hidden;
+    margin-right: 0px;
+    position: relative;
+}
+
+.time-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 83.8vh;
+    margin-right: 0px;
+    overflow: scroll;
+    /* margin-left: -50px; */
+    display: inline-block;
+    scrollbar-color: gray;
+    position: absolute;
+}
+
+.time-marker-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 84.3vh;
+    margin-right: 0px;
+    overflow: auto;
+    margin-top: 10px;
+    /* margin-left: -50px; */
+    display: inline-block;
+    scrollbar-color: gray;
+    position: absolute;
+    overflow: auto;
+}
+
+.time-item {
+    display: flex;
+    align-content: flex-end;
+    min-height: 57px;
+    height: 6vh;
+}
+
+.left-time {
+    word-wrap: unset;
+    width: 40px;
+    margin-bottom: -10px;
+    align-self: flex-end;
+}
+
+.row-item {
+    width: 163vh; 
+    height: 1px; 
+    background-color: rgba(128, 128, 128, 0.253);
+    align-self: flex-end;
+}
+
+.red-bar {
+    display: flex;
+    align-content: flex-end;
+    /* margin-left: 57.5px; */
+    position: absolute;
+    
+    top: 35px;
+    width: 23vh;
+    z-index: 100;
+}
+.event-item {
+    display: flex;
+    align-content: flex-end;
+    margin-left: 67px;
+    margin-top: 5px;
+    flex-direction: column;
+    position: absolute;
+    width: 23vh;
+    height: 56px;
+    background-color: #1a73e8;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+.red-item{
+    width: 160vh; 
+    height: 1.7px; 
+    background-color: rgb(241, 12, 12)
+}
+
+.red-circle {
+    height: 10px;
+    width: 78px;
+    border-radius: 50%;
+    background-color: rgb(241, 12, 12);
+    margin-top: -3.5px;
+}
+
+.time-marker {
+    width: 163vh; 
+    height: 20px; 
+    background-color: rgba(226, 14, 14, 0.856);
+}
+
+.in-noitem {
+    color: white;
+    display: block;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.day-item {
+    display: flex; 
+    flex-direction: column;
+    width: 22vh;
+    height: 40px;
+    z-index: 10;
+    background-color: white;
+}
+.day-date {
+    justify-content: center !important;
+    text-align: center;
+
+    font-size: 26px;
+    letter-spacing: -2.6px;
+    text-indent: -2.6px;
+    font-variant: tabular-nums;
+    -webkit-font-feature-settings: "tnum" 1;
+    font-feature-settings: "tnum" 1;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    color: #3c4043;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    line-height: 46px;
+    height: 46px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 46px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.day-date:hover {
+    background-color: rgba(134, 131, 131, 0.192);
+}
+
+.day-active {
+    color: #1a73e8 !important;
+}

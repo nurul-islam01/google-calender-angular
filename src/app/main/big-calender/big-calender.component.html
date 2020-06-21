@@ -1,0 +1,174 @@
+<div id="content" mouseWheel (mouseWheelUp)="mouseUp()" (mouseWheelDown)="mouseDown()" style="position: relative; width: 100%;">
+
+    <div class="calendar-2" data-toggle="calendar-2" style="position: absolute; width: 100%; z-index: 100; pointer-events: none;">
+        <div class="row" style="width: 100%;">
+            <span style="width: 97.3%; display: flex; align-content: stretch; flex-direction: column; margin-top: 70px;">
+                <small id="item0" style="position: relative; color: white; visibility: hidden; width: 20vh; background-color: #1a73e8; display: block; height: 20px; margin: 3px; border-radius: 3px; ">(no title)</small>
+            </span>
+        </div>
+        
+        <div class="row">
+            <span style="width: 97.3%; display: flex; align-content: stretch; flex-direction: column; margin-top: 40px;">
+                <small id="item1" style="position: relative; color: white; visibility: hidden; width: 20vh; background-color: #1a73e8; display: block; height: 20px; margin: 3px; border-radius: 3px; ">(no title)</small>
+            </span>
+        </div>
+        <div class="row">
+            <span style="width: 97.3%; display: flex; align-content: stretch; flex-direction: column; margin-top: 40px;">
+                <small id="item2" style="position: relative; color: white; visibility: hidden; width: 20vh; background-color: #1a73e8; display: block; height: 20px; margin: 3px; border-radius: 3px; ">(no title)</small>
+            </span>
+        </div>
+        <div class="row">
+            <span style="width: 97.3%; display: flex; align-content: stretch; flex-direction: column; margin-top: 40px;">
+                <small id="item3" style="position: relative; color: white; visibility: hidden; width: 20vh; background-color: #1a73e8; display: block; height: 20px; margin: 3px; border-radius: 3px; ">(no title)</small>
+            </span>
+        </div>
+        <div class="row">
+            <span style="width: 97.3%; display: flex; align-content: stretch; flex-direction: column; margin-top: 40px;">
+                <small id="item4" style="position: relative; color: white; visibility: hidden; width: 20vh; background-color: #1a73e8; display: block; height: 20px; margin: 3px; border-radius: 3px; ">(no title)</small>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="calendar-2" data-toggle="calendar-2" style="position: absolute; width: 100%; z-index: 1;">   
+     
+        <div class="row">
+        
+            <div class="col-xs-12 calendar-2-day calendar-2-no-current-month" id="indx0" (click)="addReminder($event, 0)">
+                <span>SUN</span>
+                <time [attr.datetime]="formatDate(days[0])" [class.active-date]="activeDate(days[0])" [class.not-this-month]="thisMonth(days[0])">{{getDate(days[0])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day calendar-2-no-current-month" id="indx1" (click)="addReminder($event, 1)">
+                <span>MON</span>
+                <time [attr.datetime]="formatDate(days[1])" [class.active-date]="activeDate(days[1])" [class.not-this-month]="thisMonth(days[1])">{{getDate(days[1])}}</time>
+                <!-- <span class="no-title" >(no title)</span> -->
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx2"  (click)="addReminder($event, 2)">
+                <span>TUS</span>
+                <time [attr.datetime]="formatDate(days[2])" [class.active-date]="activeDate(days[2])" [class.not-this-month]="thisMonth(days[2])">{{getDate(days[2])}}</time>
+                <!-- <span class="no-title" *ngIf="dateIndex === 2">(no title)</span> -->
+
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx3" (click)="addReminder($event, 3)">
+                <span>WED</span>
+                <time [attr.datetime]="formatDate(days[3])" [class.active-date]="activeDate(days[3])" [class.not-this-month]="thisMonth(days[3])">{{getDate(days[3])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx4" (click)="addReminder($event, 4)">
+                <span>THU</span>
+                <time [attr.datetime]="formatDate(days[4])" [class.active-date]="activeDate(days[4])" [class.not-this-month]="thisMonth(days[4])">{{getDate(days[4])}}</time>
+                
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx5" (click)="addReminder($event, 5)">
+                <span>FRI</span>
+                <time [attr.datetime]="formatDate(days[5])" [class.active-date]="activeDate(days[5])" [class.not-this-month]="thisMonth(days[5])">{{getDate(days[5])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx6"  (click)="addReminder($event, 6)">
+                <span>SAT</span>
+                <time [attr.datetime]="formatDate(days[6])" [class.active-date]="activeDate(days[6])" [class.not-this-month]="thisMonth(days[6])">{{getDate(days[6])}}</time>
+            </div>
+
+            
+         
+        </div>
+        <div class="row">
+
+            <div class="col-xs-12 calendar-2-day" id="indx7" (click)="addReminder($event, 7)">
+                <time [attr.datetime]="formatDate(days[7])" [class.active-date]="activeDate(days[7])" [class.not-this-month]="thisMonth(days[7])">{{getDate(days[7])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx8" (click)="addReminder($event, 8)">
+                <time [attr.datetime]="formatDate(days[8])" [class.active-date]="activeDate(days[8])" [class.not-this-month]="thisMonth(days[8])">{{getDate(days[8])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx9" (click)="addReminder($event, 9)">
+                <time [attr.datetime]="formatDate(days[9])" [class.active-date]="activeDate(days[9])" [class.not-this-month]="thisMonth(days[9])">{{getDate(days[9])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx10" (click)="addReminder($event, 10)">
+                <time [attr.datetime]="formatDate(days[10])" [class.active-date]="activeDate(days[10])" [class.not-this-month]="thisMonth(days[10])">{{getDate(days[10])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx11" (click)="addReminder($event, 11)">
+                <time [attr.datetime]="formatDate(days[11])" [class.active-date]="activeDate(days[11])" [class.not-this-month]="thisMonth(days[11])">{{getDate(days[11])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx12" (click)="addReminder($event, 12)">
+                <time [attr.datetime]="formatDate(days[12])" [class.active-date]="activeDate(days[12])" [class.not-this-month]="thisMonth(days[12])">{{getDate(days[12])}}</time>                
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx13" (click)="addReminder($event, 13)">
+                <time [attr.datetime]="formatDate(days[13])" [class.active-date]="activeDate(days[13])" [class.not-this-month]="thisMonth(days[13])">{{getDate(days[13])}}</time>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 calendar-2-day" id="indx14" (click)="addReminder($event, 14)">
+                <time [attr.datetime]="formatDate(days[14])" [class.active-date]="activeDate(days[14])" [class.not-this-month]="thisMonth(days[14])">{{getDate(days[14])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx15" (click)="addReminder($event, 15)">
+                <time [attr.datetime]="formatDate(days[15])" [class.active-date]="activeDate(days[15])" [class.not-this-month]="thisMonth(days[15])">{{getDate(days[15])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day"  id="indx16" (click)="addReminder($event, 16)">
+                <time [attr.datetime]="formatDate(days[16])" [class.active-date]="activeDate(days[16])" [class.not-this-month]="thisMonth(days[16])">{{getDate(days[16])}}</time>
+                
+            </div>
+            <div class="col-xs-12 calendar-2-day"  id="indx17" (click)="addReminder($event, 17)">
+                <time [attr.datetime]="formatDate(days[17])" [class.active-date]="activeDate(days[17])" [class.not-this-month]="thisMonth(days[17])">{{getDate(days[17])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day"  id="indx18" (click)="addReminder($event, 18)">
+                <time [attr.datetime]="formatDate(days[18])" [class.active-date]="activeDate(days[18])" [class.not-this-month]="thisMonth(days[18])">{{getDate(days[18])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day"  id="indx19" (click)="addReminder($event, 19)">
+                <time [attr.datetime]="formatDate(days[19])" [class.active-date]="activeDate(days[19])" [class.not-this-month]="thisMonth(days[19])">{{getDate(days[19])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day"  id="indx20" (click)="addReminder($event, 20)">
+                <time [attr.datetime]="formatDate(days[20])" [class.active-date]="activeDate(days[20])" [class.not-this-month]="thisMonth(days[20])">{{getDate(days[20])}}</time>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 calendar-2-day"  id="indx21" (click)="addReminder($event, 21)">
+                <time [attr.datetime]="formatDate(days[21])" [class.active-date]="activeDate(days[21])" [class.not-this-month]="thisMonth(days[21])">{{getDate(days[21])}}</time>                
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx22"  (click)="addReminder($event, 22)">
+                <time [attr.datetime]="formatDate(days[22])" [class.active-date]="activeDate(days[22])" [class.not-this-month]="thisMonth(days[22])">{{getDate(days[22])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day"  id="indx23" (click)="addReminder($event,  23)">
+                <time [attr.datetime]="formatDate(days[23])" [class.active-date]="activeDate(days[23])" [class.not-this-month]="thisMonth(days[23])">{{getDate(days[23])}}</time>
+            </div>
+            
+            <div class="col-xs-12 calendar-2-day"  id="indx24" (click)="addReminder($event,  24)">
+                <time [attr.datetime]="formatDate(days[24])" [class.active-date]="activeDate(days[24])" [class.not-this-month]="thisMonth(days[24])">{{getDate(days[24])}}</time>
+            </div>
+
+            <!-- <div class="col-xs-12 calendar-2-day" id="indx24"  (click)="addReminder($event, 'middle', 24)">
+                <time [attr.datetime]="formatDate(days[24])" [class.active-date]="activeDate(days[24])" [class.not-this-month]="thisMonth(days[24])">{{getDate(days[24])}}</time>
+            </div> -->
+            <div class="col-xs-12 calendar-2-day" id="indx25"  (click)="addReminder($event, 25)">
+                <time [attr.datetime]="formatDate(days[25])" [class.active-date]="activeDate(days[25])" [class.not-this-month]="thisMonth(days[25])">{{getDate(days[25])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day"  id="indx26" (click)="addReminder($event, 26)">
+                <time [attr.datetime]="formatDate(days[26])" [class.active-date]="activeDate(days[26])" [class.not-this-month]="thisMonth(days[26])">{{getDate(days[26])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx27"  (click)="addReminder($event, 27)">
+                <time [attr.datetime]="formatDate(days[27])" [class.active-date]="activeDate(days[27])" [class.not-this-month]="thisMonth(days[27])">{{getDate(days[27])}}</time>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 calendar-2-day" id="indx28"  (click)="addReminder($event, 28)">
+                <time [attr.datetime]="formatDate(days[28])" [class.active-date]="activeDate(days[28])" [class.not-this-month]="thisMonth(days[28])">{{getDate(days[28])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx29"  (click)="addReminder($event, 29)">
+                <time [attr.datetime]="formatDate(days[29])" [class.active-date]="activeDate(days[29])" [class.not-this-month]="thisMonth(days[29])">{{getDate(days[29])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx30"  (click)="addReminder($event, 30)">
+                <time [attr.datetime]="formatDate(days[30])" [class.active-date]="activeDate(days[30])" [class.not-this-month]="thisMonth(days[30])">{{getDate(days[30])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx31"  (click)="addReminder($event, 31)">
+                <time [attr.datetime]="formatDate(days[31])" [class.active-date]="activeDate(days[31])" [class.not-this-month]="thisMonth(days[31])">{{getDate(days[31])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day" id="indx32"  (click)="addReminder($event, 32)">
+                <time [attr.datetime]="formatDate(days[32])" [class.active-date]="activeDate(days[32])" [class.not-this-month]="thisMonth(days[32])">{{getDate(days[32])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day calendar-2-no-current-month" id="indx33"  (click)="addReminder($event, 33)">
+                <time [attr.datetime]="formatDate(days[33])" [class.active-date]="activeDate(days[33])" [class.not-this-month]="thisMonth(days[33])">{{getDate(days[33])}}</time>
+            </div>
+            <div class="col-xs-12 calendar-2-day calendar-2-no-current-month" id="indx34"  (click)="addReminder($event, 34)">
+                <time [attr.datetime]="formatDate(days[34])" [class.active-date]="activeDate(days[34])" [class.not-this-month]="thisMonth(days[34])">{{getDate(days[34])}}</time>
+            </div>
+        </div>
+     </div>
+</div>

@@ -1,0 +1,127 @@
+<div class="day-main">
+    <div class="day-header">
+        <div class="gmt"><span>{{gmt}}</span></div>
+        <div class="top-border"></div>
+        <div style="display: flex; flex-direction: column;">
+            <span class="day-name" >{{dayName}}</span>
+            <div class="day"><span>{{day}}</span></div>
+        </div>
+        
+    </div>
+
+        <div class="day-container">
+            <div class="left-border"></div>
+            
+            <div class="time-container" id="time-container">
+
+                <div class="red-bar" id="red-marker">
+                    <span class="red-circle"></span><span class="red-item"></span>
+                </div>
+
+                <div class="event-item" id="event-item" (cdkDragEnded)="drop($event)" cdkDragLockAxis="y" cdkDrag>
+                    <span class="in-noitem" style="margin-top: 4px;">(no item)</span>
+                    <span class="in-noitem">{{fromTime}} - {{toTime}} </span>
+                </div>
+
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">1 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">2 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">3 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">4 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">5 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">6 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">7 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">8 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">9 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">10 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">11 AM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">12 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">1 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">2 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">3 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">4 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">5 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">6 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">7 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">8 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">9 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">10 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">11 PM</small><span class="row-item"></span>
+                </div>
+                
+                <div class="time-item" (click)="addEvent($event)">
+                    <small class="left-time">12 PM</small><span class="row-item"></span>
+                </div>
+                
+                
+    
+            </div>
+        </div>
+    
+</div>
